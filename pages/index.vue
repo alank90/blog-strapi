@@ -3,9 +3,9 @@
     <div>
       <Logo />
       <h1 class="title">
-        frontend
+        Alan's Home Blog
       </h1>
-      <h2>Blog using Strapi, Nuxt and Apollo</h2>
+      <h2>My Thought's on Music, Books etc...</h2>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -46,7 +46,7 @@ export default {};
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 100px;
   color: #35495e;
   letter-spacing: 1px;
