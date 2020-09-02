@@ -2,14 +2,14 @@
   <div>
     <div class="uk-child-width-1-2" uk-grid>
       <div>
-        <router-link
+        <nuxt-link
           v-for="article in leftArticles"
           :key="article.id"
           :to="{ name: 'articles-id', params: { id: article.id } }"
           class="uk-link-reset"
         >
           <div class="uk-card uk-card-muted">
-            <div v-if="article.image" class="uk-card-media-top">
+            <div class="uk-card-media-top">
               <img :src="api_url + article.image.url" alt="" height="100" />
             </div>
             <div class="uk-card-body">
@@ -23,18 +23,18 @@
               <p id="title" class="uk-text-large">{{ article.title }}</p>
             </div>
           </div>
-        </router-link>
+        </nuxt-link>
       </div>
       <div>
         <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <router-link
+          <nuxt-link
             v-for="article in rightArticles"
             :key="article.id"
             :to="{ name: 'articles-id', params: { id: article.id } }"
             class="uk-link-reset"
           >
             <div class="uk-card uk-card-muted">
-              <div v-if="article.image" class="uk-card-media-top">
+              <div class="uk-card-media-top">
                 <img :src="api_url + article.image.url" alt="" height="100" />
               </div>
               <div class="uk-card-body">
@@ -48,7 +48,7 @@
                 <p id="title" class="uk-text-large">{{ article.title }}</p>
               </div>
             </div>
-          </router-link>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -56,11 +56,14 @@
 </template>
 
 <script>
-import articlesQuery from '~/apollo/queries/article/articles';
-
 export default {
   props: {
-    articles: Array,
+    articles: {
+      type: Array,
+      default() {
+        return [];
+      },
+    },
   },
   data() {
     return {
