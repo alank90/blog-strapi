@@ -63,7 +63,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/apollo'],
+  modules: ['@nuxtjs/apollo', '@nuxtjs/markdownit'],
   apollo: {
     clientConfigs: {
       default: {
@@ -72,6 +72,13 @@ export default {
       },
     },
   },
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true,
+  },
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
